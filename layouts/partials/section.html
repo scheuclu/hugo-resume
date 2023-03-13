@@ -1,24 +1,42 @@
 <section>
-  <h2>{{ .heading }}</h2>
-  {{ with .body }}<p>{{ . }}</p>{{ end }}
+  <div class="logo-and-text">
+    <h2>{{ .heading }}</h2>
+    {{ range .logos }}
+    <img src={{ . }} alt="Italian Trulli" height="14px">
+    {{ end }}
+
+  </div>
+  {{ with .body }}<p>{{ . }} </p>{{ end }}
   {{ partial "bullet-list.html" .points }}
   {{ range .subsections }}
-    <div>
-      {{ with .heading }}
-        <div class="heading-line">
-          <h3>{{ .label }}</h3>
-          <h3>
-            {{ .startdate }} -
-            {{ if .enddate }}{{ .enddate }}{{ else }}Current{{ end }}
-          </h3>
-        </div>
-      {{ end }}
-      {{ range .degrees }}
-        <p>
-          <em>{{ . }}</em>
-        </p>
-      {{ end }}
-      {{ partial "bullet-list.html" .points }}
+  <div>
+
+    {{ with .heading }}
+    <div class="heading-line">
+      <div class="logo-and-text">
+
+
+        <!-- {{ if .logo }}
+        <img src={{.logo }} alt="Italian Trulli" height="14px">
+        {{ end }} -->
+
+        <h3>{{.label }}</h3>
+
+
+      </div>
+
+      <h3>
+        {{ .startdate }} -
+        {{ if .enddate }}{{ .enddate }}{{ else }}Current{{ end }}
+      </h3>
     </div>
+    {{ end }}
+    {{ range .degrees }}
+    <p>
+      <em>{{ . }}</em>
+    </p>
+    {{ end }}
+    {{ partial "bullet-list.html" .points }}
+  </div>
   {{ end }}
 </section>
