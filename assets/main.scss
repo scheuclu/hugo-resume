@@ -27,6 +27,12 @@ h6 {
 h1 {
   font-size: 50px;
   text-align: center;
+  // color: #012a71;
+  // text-shadow: 0px 0px 2px #012a71;
+  -webkit-text-stroke: 1px #000;
+  // background: -webkit-linear-gradient(270deg, #000, #012a71);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
 }
 
 h2 {
@@ -173,4 +179,19 @@ header {
 .download-cv{
   display: flex;
   justify-content: end;
+}
+
+
+a {
+  color: #012a71;
+}
+a:visited{
+  color: #012a71;
+}
+
+
+@media print {
+  .download-cv {
+    display: none;
+  }
 }
