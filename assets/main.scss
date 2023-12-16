@@ -188,4 +188,30 @@ a:visited{
   .download-cv {
     display: none;
   }
+  .box {
+    background-color: transparent;
+    box-shadow: none;
+    margin: auto;
+    position: relative;
+    width: 790px;
+
+    &::before,
+    &::after {
+      background: transparent;
+      bottom: 12px;
+      box-shadow: none;
+      content: ' ';
+      height: 10px;
+      left: 12px;
+      position: absolute;
+      width: 40%;
+      z-index: -1;
+    }
+
+    &::after {
+      left: auto;
+      right: 12px;
+      transform: skew(5deg) rotate(5deg);
+    }
+  }
 }
