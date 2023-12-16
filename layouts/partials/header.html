@@ -16,13 +16,18 @@
       <a href="mailto:{{ . }}">{{ . }}</a>
     {{ end }}
     {{ with .phone }}
-      <a href="tel:{{ . }}"
-        >({{ substr . 0 3 }}) {{ substr . 3 3 }}-{{ substr . 6 4 }}</a
-      >
+      <a href="tel:{{ . }}">{{ . }}</a>
     {{ end }}
     {{ with .website }}
       <a href="https://{{ . }}">{{ . }}</a>
     {{ end }}
+
+    {{ with .linkedin }}
+    <a href="https://linkedin.com/in/{{ . }}"
+      ><i class="fab fa-linkedin"></i> {{ . }}</a
+    >
+    {{ end }}
+
     {{ with .github }}
       <a href="https://github.com/{{ . }}"
         ><i class="fab fa-github"></i> {{ . }}</a
